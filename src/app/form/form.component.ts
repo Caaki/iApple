@@ -31,13 +31,13 @@ export class FormComponent implements OnInit {
   public initForm(){
     this.productForm = new FormGroup({
       title: new FormControl('',[
-        Validators.required
+        Validators.required,Validators.minLength(6)
       ]),
       price: new FormControl('',[
-        Validators.required
+        Validators.required,Validators.minLength(1)
       ]),
       detail: new FormControl('',[
-        Validators.required
+        Validators.required,Validators.minLength(6)
       ]),
       id: new FormControl('',[
         Validators.required
