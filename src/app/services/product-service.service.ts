@@ -9,36 +9,37 @@ import { Product } from '../models/product';
 })
 export class ProductServiceService {
 
-  json_locatio = '../proizvodi.json';
-
+  json_locatio = 'https://raw.githubusercontent.com/Caaki/iApple/main/src/app/proizvodi.json';
+  json_locatio2 = '../proizvodi.json';
+  
   constructor(private _httpClient: HttpClient) { }
 
   private _createProductFromObject(item:any) {
     return new Product(item.title, item.price, item.detail, item.thumbnailImage,item.fullImage);
     }
 
-  public getProducts(): Observable<Product[]>{
-    return this._httpClient.get(this.json_locatio).pipe(
-      map((data: any[]) => data.map((item: any)=>
-      this._createProductFromObject(item))),
+  public getProducts() : Observable<Product[]>{
+    return this._httpClient.get<Product[]>(this.json_locatio).pipe(
+      map((data:any[]) => data.map((item :any)=> 
+      this._createProductFromObject(item)))
     );
   }
 
   public getProduct(id: Number){
     return this._httpClient.get(this.json_locatio+'/'+id).pipe(
-      map((data: any)=> this._createProductFromObject(data)),
+      map((data: any)=> this._createProductFromObject(data))
     );
   }
 
   public deleteProduct(id: Number) : Observable<Product>{
     return this._httpClient.delete(this.json_locatio+"/" + id).pipe(
-      map((data: any)=> this._createProductFromObject(data)),
+      map((data: any)=> this._createProductFromObject(data))
     );
   }
 
   public createProduct(product: Product) : Observable<Product>{
     return this._httpClient.post(this.json_locatio,product).pipe(
-      map((data: any) => this._createProductFromObject(data)),
+      map((data: any) => this._createProductFromObject(data))
     )
   }
 }
