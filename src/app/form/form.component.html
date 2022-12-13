@@ -68,9 +68,11 @@
           <th scope="col">Image</th>
           <th scope="col">Get post</th>
           <th scope="col">Delete</th>
+          <th scope="col"><input type="checkbox" id="usluga" name="usluga" (click)="dodatneUsluge()"></th>
+          <th scope="col"><label for="usluga">Dodatne usluge</label></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tabela">
       <tr *ngFor="let product of products; index as i;">
           <td class="col3">{{product.title}}</td>
           <td class="col3">{{product.price}}</td>

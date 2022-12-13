@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { throws } from 'assert';
+import { combineAll } from 'rxjs';
 import { Product } from '../models/product';
 import { ProductServiceService } from '../services/product-service.service';
 
@@ -13,10 +14,18 @@ export class FormComponent implements OnInit {
 
   public productForm!: FormGroup;
   public products!: Product[];
+  public dodatne!: Boolean;
 
   constructor(private _productService: ProductServiceService) { 
     this._productService.getProducts().subscribe((data)=>{
       this.products = data;
+      
+      this.dodatne = false;
+
+      if (this.dodatne == true){
+        this.products = this.products.map(product => new Product(product.title,product.price*2,product.detail,product.thumbnailImage,product.id));
+      }
+      
     
   })
 
@@ -47,6 +56,7 @@ export class FormComponent implements OnInit {
 
 
   public submitForm(){
+   
     let title = this.productForm.get('title')!.value;
     let price = this.productForm.get('price')!.value;
     let detail = this.productForm.get('detail')!.value;
@@ -84,5 +94,25 @@ export class FormComponent implements OnInit {
     let ind = this.products.findIndex(product => product.id == id);
     this.products.splice(ind,1);
   }
+
+  public dodatneUsluge(){
+
+
+    const checkBox:any = document.getElementById("usluga");
+    const tabela:any = document.getElementById("tabela");
+    
+    this.dodatne = checkBox.checked;
+    
+    this._productService.getProducts().subscribe((data)=>{
+      this.products = data;
+      
+
+      if (this.dodatne == true){
+        this.products = this.products.map(product => new Product(product.title,product.price*2,product.detail,product.thumbnailImage,product.id));
+      } 
+  })
+  
+  console.log(this.products);
+}
 
 }
