@@ -3,6 +3,9 @@ import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { Product } from '../models/product';
+import { HttpClientModule } from '@angular/common/http';
+import { compileDeclareInjectableFromMetadata, isNgTemplate } from '@angular/compiler';
+import { importType } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +18,7 @@ export class ProductServiceService {
   constructor(private _httpClient: HttpClient) { }
 
   private _createProductFromObject(item:any) {
-    return new Product(item.title, item.price, item.detail, item.thumbnailImage,item.fullImage);
+    return new Product(item.title, item.price, item.detail, item.thumbnailImage,item.id);
     }
 
   public getProducts() : Observable<Product[]>{
@@ -26,9 +29,8 @@ export class ProductServiceService {
   }
 
   public getProduct(id: Number){
-    return this._httpClient.get(this.json_locatio+'/'+id).pipe(
-      map((data: any)=> this._createProductFromObject(data))
-    );
+    return this.getProducts().pipe(
+      map(items => items.find(item => item.id === id)));
   }
 
   public deleteProduct(id: Number) : Observable<Product>{
@@ -42,4 +44,6 @@ export class ProductServiceService {
       map((data: any) => this._createProductFromObject(data))
     )
   }
+
+
 }

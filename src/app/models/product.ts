@@ -14,7 +14,7 @@ export class Product {
             this.detail = detail;
             this.thumbnailImage = thumbnailImage;
             this.id = id;
-
     }
+
 
 }

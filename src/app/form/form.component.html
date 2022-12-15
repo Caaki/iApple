@@ -66,6 +66,8 @@
           <th scope="col">Price</th>
           <th scope="col">Detail</th>
           <th scope="col">Image</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Get price</th>
           <th scope="col">Get post</th>
           <th scope="col">Delete</th>
           <th scope="col"><input type="checkbox" id="usluga" name="usluga" (click)="dodatneUsluge()"></th>
@@ -79,6 +81,12 @@
           <td class="col3">{{product.detail}}</td>
           <td class="col3"><img src='{{product.thumbnailImage}}' class="img-thumbnail" style="max-width: 200px ;" ></td>
           
+          <td class="col3"><input id="input{{product.id}}" type="text"></td> 
+          
+          <td>
+            <button (click) = "getPrice(product.id)" type="button" class="btn btn-primary">Buy</button>
+          </td>
+
           <td>
             <button (click) = "getProduct(product.id)" type="button" class="btn btn-primary">Get post</button>
           </td>

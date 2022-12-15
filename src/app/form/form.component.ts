@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { throws } from 'assert';
 import { combineAll } from 'rxjs';
@@ -115,4 +115,13 @@ export class FormComponent implements OnInit {
   console.log(this.products);
 }
 
+public getPrice(id: Number){
+
+  const quantity = document.getElementById('input'+id) as HTMLInputElement | null;
+  let product = this.products.find(product => product.id ===id);
+  if (quantity !== null){
+      alert("Your bill is: " +product!.price * parseInt(quantity?.value));
+    }
+
+}
 }
