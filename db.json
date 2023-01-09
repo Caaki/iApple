@@ -1,0 +1,46 @@
+{
+  "products": [
+    {
+      "title": "iPhone 6",
+      "price": 1000,
+      "detail": "iPhone 6 isn’t simply bigger — it’s better in every way. Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display. It’s one continuous form where hardware and software function in perfect unison, creating a new generation of iPhone that’s better by any measure.",
+      "thumbnailImage": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP705/SP705-iphone_6-mul.png",
+      "id": 2
+    },
+    {
+      "title": "Apple TV",
+      "price": 250,
+      "detail": "Apple TV is a digital media player and a microconsole developed and sold by Apple Inc. It is a small network appliance and entertainment device that can receive digital data from a number of sources and stream it to capable TV for playing on the TV screen.",
+      "thumbnailImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-tv-4k-hero-select-202210_FMT_WHH?wid=640&hei=600&fmt=jpeg&qlt=90&.v=1664896361164",
+      "id": 3
+    },
+    {
+      "title": "Macbook pro",
+      "price": 2000,
+      "detail": "The MacBook Pro (sometimes abbreviated MBP[1]) is a line of Macintosh portable computers introduced in January 2006 by Apple Inc., and now in its third generation. Replacing the PowerBook G4, the MacBook Pro was the second model, after the iMac, to be announced in the Apple–Intel transition. It is also the high-end model of the MacBook family and is currently produced with 13- and 15-inch screens, while a 17-inch version was also available in the past.",
+      "thumbnailImage": "https://istyle.hu/media/wysiwyg/HU/landing-pages/preselection/mbp-13-sg.jpeg",
+      "id": 4
+    },
+    {
+      "title": "Macbook Air",
+      "price": 1200,
+      "detail": "The MacBook Air is a line of Macintosh ultraportable notebook computers from Apple Inc. The Air was designed to balance both performance and portability, consisting of a full-sized keyboard design, a machined casing made of aluminum, and a very light and thin structure. The MacBook Air is available in two sizes, with the length of the diagonal display determining the model size: 13.3-inch and 11.6-inch (or 33.78 cm and 29.46 cm, respectively).",
+      "thumbnailImage": "https://istyle.rs/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/m/a/macbook_air_space_gray_with_m1_chip_2-up_print__usen_3.jpg",
+      "id": 5
+    },
+    {
+      "title": "iMac",
+      "price": 3000,
+      "detail": "The iMac is a range of all-in-one Macintosh desktop computers designed and built by Apple Inc. It has been the primary part of Apple's consumer desktop offerings since its debut in August 1998 (shipped; introduced June 1998), and has evolved through six distinct forms.In its original form, the iMac G3 had a gumdrop or egg-shaped look, with a CRT monitor, mainly enclosed by a colored, translucent plastic case, which was refreshed early on with a sleeker design notable for its slot-loaded optical drive.",
+      "thumbnailImage": "https://www.apple.com/newsroom/images/product/imac/standard/Apple_imac-magickeyboardnum-magicmouse2-macos-wallpaper_08042020_big.jpg.large.jpg",
+      "id": 6
+    },
+    {
+      "title": "iPad Air 2",
+      "price": 1200,
+      "detail": "To create the astonishingly thin silhouette of iPad Air 2, we started by redesigning the Retina display, fusing what had been three layers into one. Not only did this make the display thinner, it made it better, with more vivid colors and greater contrast. Then we added an antireflective coating, giving iPad Air 2 the least reflective display of any tablet in the world.",
+      "thumbnailImage": "https://cdn.alloallo.media/catalog/product/apple/ipad/ipad-air-2/ipad-air-2-space-gray.jpg",
+      "id": 7
+    }
+  ]
+}

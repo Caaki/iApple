@@ -50,6 +50,9 @@ export class FormComponent implements OnInit {
       ]),
       id: new FormControl('',[
         Validators.required
+      ]),
+      thumbnailImage: new FormControl('',[
+        Validators.required
       ])
     });
   }
@@ -60,13 +63,15 @@ export class FormComponent implements OnInit {
     let title = this.productForm.get('title')!.value;
     let price = this.productForm.get('price')!.value;
     let detail = this.productForm.get('detail')!.value;
-    let thumbnailImage = this.productForm.get('thumbnailImage')!.value;
+    let thumbnailImage = this.productForm.get('thumbnailImage')?.value;
     let id = this.productForm.get('id')!.value;
 
     let product = new Product(title,price,detail,thumbnailImage,id);
 
     this.createProduct(product);
   }
+
+  
 
   public getProduct(id: Number){
     this._productService.getProduct(id).subscribe((data)=>{
@@ -119,6 +124,7 @@ public getPrice(id: Number){
 
   const quantity = document.getElementById('input'+id) as HTMLInputElement | null;
   let product = this.products.find(product => product.id ===id);
+  
   if (quantity !== null){
       alert("Your bill is: " +product!.price * parseInt(quantity?.value));
     }

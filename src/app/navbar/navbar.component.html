@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a routerLink="/" class="navbar-brand d-flex align-items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Apple_logo_grey.svg" style="max-width: 50px;" alt="Logo" class="mr-2">
+        
+      </a>
+      <button class="navbar-toggler" type="button" (click)="collapsed = !collapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" [class.show]="collapsed" (window:resize)="collapsed = true">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-uppercase font-weight-bold text-white nav-link-hover"
+               [ngClass]="{'bg-primary': collapsed, 'bg-transparent': !collapsed}"
+               [routerLinkActive]="['active']">Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-uppercase font-weight-bold text-white nav-link-hover"
+               [ngClass]="{'bg-primary': collapsed, 'bg-transparent': !collapsed}"
+               [routerLinkActive]="['active']">Shoping list</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle text-uppercase font-weight-bold text-white nav-link-hover"
+               [ngClass]="{'bg-primary': collapsed, 'bg-transparent': !collapsed}" role="button">Manage</a>
+            <div class="dropdown-menu dropdown-menu-right w-100">
+              <a href="#" class="dropdown-item">Save data</a>
+              <a href="#" class="dropdown-item">Fetch data</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item"><i class="fas fa-angle-down mr-2"></i>More options</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  

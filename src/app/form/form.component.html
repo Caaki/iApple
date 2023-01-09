@@ -16,17 +16,16 @@
         <label for="price" >Price</label>
         <input type="text" formControlName="price" class="form-control" name="price">
 
-        <div *ngIf="productForm.controls['detail'].invalid &&
-        (productForm.controls['detail'].dirty || productForm.controls['detail'].touched)"
+        <div *ngIf="productForm.controls['price'].invalid &&
+        (productForm.controls['price'].dirty || productForm.controls['price'].touched)"
         class="alert alert-danger">
             Cena mora da bude veca od 10!!!
-        <div *ngIf="$any(productForm.controls['detail']).errors.required">
+        <div *ngIf="$any(productForm.controls['price']).errors.required">
             Cena su Obavezna!!!
         </div>
     </div>
 
     </div>
-
     <div class="form-group">
         <label for="detail" >Detail</label>
         <input type="text" formControlName="detail" class="form-control" name="detail">
@@ -42,14 +41,15 @@
     </div>
 
     <div class="form-group">
-        <label for="thumbnailImage" >Thumbnai Image</label>
-        <input type="text" class="form-control" name="thumbnailImage">
-    </div>
-
-    <div class="form-group">
         <label for="id" >id</label>
         <input type="text" formControlName="id" class="form-control" name="id">
     </div>
+    <div class="form-group">
+        <label for="thumbnailImage" >Thumbnail Image</label>
+        <input type="text" formControlName="thumbnailImage" class="form-control" name="thumbnailImage">
+    </div>
+
+   
 
     <div class="col button-holder d-flex justify-center align-items-center mt-4">
         <button class="btn btn-success" type="submit" name="submit">Dodaj</button>
@@ -81,7 +81,7 @@
           <td class="col3">{{product.detail}}</td>
           <td class="col3"><img src='{{product.thumbnailImage}}' class="img-thumbnail" style="max-width: 200px ;" ></td>
           
-          <td class="col3"><input id="input{{product.id}}" type="text"></td> 
+          <td class="col3"><input id="input{{product.id}}" type="number"></td> 
           
           <td>
             <button (click) = "getPrice(product.id)" type="button" class="btn btn-primary">Buy</button>

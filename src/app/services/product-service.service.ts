@@ -12,8 +12,8 @@ import { importType } from '@angular/compiler/src/output/output_ast';
 })
 export class ProductServiceService {
 
-  json_locatio = 'https://raw.githubusercontent.com/Caaki/iApple/main/src/app/proizvodi.json';
-  json_locatio2 = '../proizvodi.json';
+  json_locatio = 'http://localhost:3000/products';
+  json_locatio2 = 'proizvodi.json';
   
   constructor(private _httpClient: HttpClient) { }
 
